@@ -10,3 +10,8 @@ before_install:
     - gcloud config set project udemy-multi-k8s-293014
     - gcloud config set compute/zone asia-southeast1-a
     - gcloud container clusters get-credentials udemy-multi-cluster
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker build -t brianngo313/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+    - docker run -e CI=true brianngo313/react-test npm test
