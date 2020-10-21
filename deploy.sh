@@ -1,6 +1,6 @@
 docker build -t brianngo313/multi-client:latest -t brianngo313/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t brianngo313/multi-server:latest -t brianngo313/multi-client:$SHA -f ./server/Dockerfile ./server
-docker build -t brianngo313/multi-worker:latest -t brianngo313/multi-client:$SHA -f ./worker/Dockerfile ./worker
+docker build -t brianngo313/multi-server:latest -t brianngo313/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t brianngo313/multi-worker:latest -t brianngo313/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push brianngo313/multi-client:latest
 docker push brianngo313/multi-server:latest
